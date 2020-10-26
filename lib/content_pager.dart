@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/card_recommend.dart';
 import 'package:flutter_app/custom_appbar.dart';
 
 class ContentPager extends StatefulWidget {
@@ -46,19 +47,19 @@ class _ContentPagerState extends State<ContentPager> {
               onPageChanged: widget.onPageChanged ,
               controller: _pageController,
               children: <Widget>[
-                _wrapItem(0),
-                _wrapItem(1),
-                _wrapItem(2),
-                _wrapItem(3)
+                _wrapItem(CardRecommend()),
+                _wrapItem(CardRecommend()),
+                _wrapItem(CardRecommend()),
+                _wrapItem(CardRecommend())
               ],
             ))
       ],
     );
   }
-  Widget _wrapItem(int index){
+  Widget _wrapItem(Widget widget){
     return Padding(
       padding: EdgeInsets.all(10),
-      child: Container(decoration: BoxDecoration(color:_colors[index])),
+      child: widget
     );
   }
   // 状态栏样式-沉浸式状态栏
