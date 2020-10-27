@@ -8,6 +8,7 @@ class BaseCard extends StatefulWidget {
  
  class BaseCardState extends State<BaseCard> {
   Color subTitleColor = Colors.grey;
+  Color bottomTitleColor = Colors.grey;
    @override
    Widget build(BuildContext context) {
      // 裁切圆角
@@ -32,8 +33,10 @@ class BaseCard extends StatefulWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              topTitle('')
+              topTitle(''),
+              topSubTitle()
             ] 
           ),
           subTitle('')
@@ -48,12 +51,19 @@ class BaseCard extends StatefulWidget {
 
   Widget subTitle(String title ) {
      return Padding(padding: EdgeInsets.only(top: 5),
-      child: Text(title,style: TextStyle(fontSize: 11,color:subTitleColor ))
+      child: Text(title,style: TextStyle(fontSize: 11, color: subTitleColor ))
      );
   }
 
   topTitle(String title) {
        return Text(title,style: TextStyle(fontSize: 22 ) );
+  }
+
+  topSubTitle() {
+     return Container();
+  }
+  bottomTitle(String title){
+    return Text(title,style: TextStyle(fontSize: 12, color: bottomTitleColor));
   }
  }
  

@@ -20,7 +20,7 @@ class _CardRecommendState extends BaseCardState{
     // 高度撑满
     return Expanded(
         child: Container(
-          constraints:BoxConstraints.expand(),
+          constraints: BoxConstraints.expand(), // 通过BoxConstraints尽可能撑满父容器
           margin: EdgeInsets.only(top: 20),
           child: Image.network(
               'http://www.devio.org/io/flutter_beauty/card_1.jpg',
